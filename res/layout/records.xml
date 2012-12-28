@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout android:id="@+id/vw" 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:stretchColumns="1">
+
+    <TableRow>
+        <TextView
+            android:id="@+id/puzzle_name"
+            android:layout_column="1"
+            android:text="@string/puzzle_name_column"
+            android:padding="3dip" />
+        <TextView
+            android:id="@+id/date"
+            android:text="@string/date_column"
+            android:gravity="left"
+            android:padding="3dip" />
+        <TextView
+            android:id="@+id/step_cnt"
+            android:text="@string/score_column"
+            android:gravity="right"
+            android:padding="3dip" />
+        </TableRow>
+
+    <View
+        android:layout_height="2dip"
+        android:background="#FF909090" />
+
+</TableLayout>

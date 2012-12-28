@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tags</string>
+    <string name="puzzle_name_column">Puzzle</string>
+    <string name="date_column">Date</string>
+    <string name="score_column">Steps:</string>
+
+</resources>
