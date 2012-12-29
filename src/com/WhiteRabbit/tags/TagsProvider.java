@@ -13,7 +13,7 @@ import android.net.Uri;
 public class TagsProvider extends ContentProvider {
  
    private static final String DATABASE_NAME = "tags.db";
-   private static final int DATABASE_VERSION = 11;
+   private static final int DATABASE_VERSION = 12;
    
    private static final UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
    private static final int PARAMS_URI_INDICATOR = 1;
@@ -701,7 +701,8 @@ public class TagsProvider extends ContentProvider {
 		   patch_8(db);
 		   patch_9(db);
 		   patch_10(db);
-//		   patch_11(db);
+		   patch_11(db);
+		   patch_12(db);
 	   }
 
 	   private void patch_2(SQLiteDatabase db) {
@@ -1789,6 +1790,70 @@ public class TagsProvider extends ContentProvider {
 		   addTagPos(db, "57, 53, 9, 7, 7");
 		   addTagPos(db, "58, 53, 10, 1, 1");
 	   }
+
+	   private void patch_12(SQLiteDatabase db) {
+		   addString(db, "1000");
+		   
+		   addValue(db, "1000, 1, 1000, 'Not easy maneuvering'");
+		   addValue(db, "1001, 2, 1000, 'Нелегкие маневры'");
+
+		   addPosition(db, "1000, 1");
+		   addPosition(db, "1001, 1");
+		   
+		   addPuzzle(db, "1000, 1000, 50, 2, " + GridActivity.PUZZLE_20_IMG + ", 1000");
+		   
+		   addParam(db, "1000, " + Integer.toString(TagsDb.ParamTypes.SizeX) + ", 1000, 6");
+		   addParam(db, "1001, " + Integer.toString(TagsDb.ParamTypes.SizeY) + ", 1000, 5");
+		   
+		   addEndPos(db, "1000, 1000, 1001");
+		   
+		   addTag(db, "1000, 1000, 1");
+		   addTag(db, "1001, 1000, 2");
+		   addTag(db, "1002, 1000, 3");
+		   addTag(db, "1003, 1000, 4");
+		   addTag(db, "1004, 1000, 5");
+		   addTag(db, "1005, 1000, 6");
+		   addTag(db, "1006, 1000, 7");
+		   addTag(db, "1007, 1000, 8");
+
+		   addItem(db, "1000, 1000, 0, 0, 0");
+		   addItem(db, "1001, 1000, 0, 1, 0");
+		   addItem(db, "1002, 1000, 0, 2, 0");
+		   addItem(db, "1003, 1000, 0, 3, 0");
+		   addItem(db, "1004, 1001, 0, 0, 0");
+		   addItem(db, "1005, 1001, 0, 1, 0");
+		   addItem(db, "1006, 1001, 0, 2, 0");
+		   addItem(db, "1007, 1001, 0, 3, 0");
+		   addItem(db, "1008, 1002, 0, 0, 0");
+		   addItem(db, "1009, 1002, 0, 1, 0");
+		   addItem(db, "1010, 1003, 0, 0, 0");
+		   addItem(db, "1011, 1003, 0, 1, 0");
+		   addItem(db, "1012, 1004, 0, 0, 0");
+		   addItem(db, "1013, 1004, 0, 1, 0");
+		   addItem(db, "1014, 1005, 0, 0, 0");
+		   addItem(db, "1015, 1005, 0, 1, 0");
+		   addItem(db, "1016, 1005, 0, 0, 1");
+		   addItem(db, "1017, 1005, 0, 1, 1");
+		   addItem(db, "1018, 1006, 0, 0, 0");
+		   addItem(db, "1019, 1006, 0, 1, 0");
+		   addItem(db, "1020, 1006, 0, 0, 1");
+		   addItem(db, "1021, 1006, 0, 1, 1");
+		   addItem(db, "1022, 1007, 0, 0, 0");
+		   addItem(db, "1023, 1007, 0, 1, 0");
+		   addItem(db, "1024, 1007, 0, 0, 1");
+		   addItem(db, "1025, 1007, 0, 1, 1");
+	   
+		   addTagPos(db, "1000, 1000, 1000, 2, 1");
+		   addTagPos(db, "1001, 1001, 1000, 2, 2");
+		   addTagPos(db, "1002, 1002, 1000, 1, 3");
+		   addTagPos(db, "1003, 1003, 1000, 3, 3");
+		   addTagPos(db, "1004, 1004, 1000, 5, 3");
+		   addTagPos(db, "1005, 1005, 1000, 1, 4");
+		   addTagPos(db, "1006, 1006, 1000, 3, 4");
+		   addTagPos(db, "1007, 1007, 1000, 5, 4");
+		   addTagPos(db, "1008, 1000, 1001, 2, 4");
+		   addTagPos(db, "1009, 1001, 1001, 2, 5");
+	   }
 	   
 	   @Override
 	   public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -1800,6 +1865,7 @@ public class TagsProvider extends ContentProvider {
 		   if (oldVersion < 9)  {patch_9(db);}
 		   if (oldVersion < 10) {patch_10(db);}
 		   if (oldVersion < 11) {patch_11(db);}
+		   if (oldVersion < 12) {patch_12(db);}
 	   }
 		   
    }

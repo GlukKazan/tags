@@ -42,6 +42,7 @@ public class GridActivity extends Activity {
     public static final long PUZZLE_17_IMG = 200017L;
     public static final long PUZZLE_18_IMG = 200018L;
     public static final long PUZZLE_19_IMG = 200019L;
+    public static final long PUZZLE_20_IMG = 200020L;
 	   
 	private String groupId;
 	private int currentLocale;
@@ -128,7 +129,7 @@ public class GridActivity extends Activity {
 		loadBitmap(PUZZLE_12_IMG,  R.drawable.p200012); loadBitmap(PUZZLE_13_IMG,  R.drawable.p200013);
 		loadBitmap(PUZZLE_14_IMG,  R.drawable.p200014); loadBitmap(PUZZLE_15_IMG,  R.drawable.p200015);
 		loadBitmap(PUZZLE_17_IMG,  R.drawable.p200017); loadBitmap(PUZZLE_18_IMG,  R.drawable.p200018);
-		loadBitmap(PUZZLE_19_IMG,  R.drawable.p200019);
+		loadBitmap(PUZZLE_19_IMG,  R.drawable.p200019); loadBitmap(PUZZLE_20_IMG,  R.drawable.p200020);
 		
         helpString = (TextView)findViewById(R.id.help_string);
         icons = (GridView)findViewById(R.id.puzzle_list);
